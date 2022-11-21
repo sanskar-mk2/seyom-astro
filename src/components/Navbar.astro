@@ -1,10 +1,11 @@
 ---
 import logo from "../assets/images/logo.png";
-import { Image, Picture } from "@astrojs/image/components";
+import { Image } from "@astrojs/image/components";
 ---
 
 <div
-    class="shadow-xl navbar bg-gradient-to-r from-blue-100 to-purple-100 fixed md:top-10 md:w-11/12 md:mx-auto rounded pr-6 md:pr-10 md:left-10 md:right-10"
+    id="nav-section"
+    class="shadow-xl z-50 navbar bg-gradient-to-r from-blue-100 to-purple-100 fixed md:top-10 md:w-11/12 md:mx-auto rounded pr-6 md:pr-10 md:left-10 md:right-10"
 >
     <div class="navbar-start">
         <div class="dropdown">
@@ -42,7 +43,7 @@ import { Image, Picture } from "@astrojs/image/components";
                         </svg>
                     </a>
                     <ul class="p-2 bg-secondary">
-                        <li class="overflow-scroll"><a>Accounting...</a></li>
+                        <li><a>Accounting...</a></li>
                         <li><a>Business...</a></li>
                         <li><a>Developing...</a></li>
                     </ul>
@@ -95,3 +96,29 @@ import { Image, Picture } from "@astrojs/image/components";
         >
     </div>
 </div>
+
+<script>
+    import { gsap } from "gsap";
+    let navbar = document.getElementById("nav-section");
+    let navOffset = navbar.offsetTop;
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= navOffset) {
+            gsap.to("#nav-section", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+            });
+            navbar.classList.remove("md:left-10");
+            navbar.classList.remove("md:right-10");
+            navbar.classList.remove("md:w-11/12");
+            navbar.classList.remove("md:mx-auto");
+            navbar.classList.remove("md:top-10");
+        } else {
+            gsap.to("#nav-section", {
+                y: -100,
+                opacity: 0,
+                duration: 1,
+            });
+        }
+    });
+</script>

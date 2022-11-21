@@ -1,0 +1,100 @@
+---
+import ass from "../assets/images/undraw_business_deal_re_up4u.svg";
+import aut from "../assets/images/undraw_data_report_re_p4so.svg";
+import ele from "../assets/images/undraw_stepping_up_g6oo.svg";
+---
+
+<section
+    class="min-h-screen flex bg-gradient-to-r from-primary to-secondary items-center"
+>
+    <div class="prose-sm xl:prose-lg flex gap-4 xl:gap-0 xl:flex-row flex-col items-center xl:items-stretch xl:justify-around w-full pl-10">
+        <div
+            id="one"
+            class="flex flex-col text-center w-5/6 xl:w-96 rounded text-base-100 bg-gray-300 px-8"
+        >
+            <h2 class="underline">Associate</h2>
+            <p class="grow">
+                Associate with us to harness the power of data automation and
+                analaytics to transform your business processes.
+            </p>
+            <img src={ass} />
+        </div>
+        <div
+            id="two"
+            class="flex flex-col text-center w-5/6 xl:w-96 rounded text-white bg-blue-500 px-8"
+        >
+            <h2 class="underline">Automate</h2>
+            <p class="grow">
+                Experience first hand the benefits of data warehousing,
+                visualization and integration to drive faster decision making
+                using real time predictive analytics.
+            </p>
+            <img src={aut} />
+        </div>
+        <div
+            id="three"
+            class="flex flex-col text-center w-5/6 xl:w-96 rounded text-base-100 bg-gray-300 px-8"
+        >
+            <h2 class="underline">Elevate</h2>
+            <p class="grow">
+                Empower your people to go beyond traditional book keeping and
+                analyst roles to thought partners, strategists and leaders who
+                are capable of making sound business decisions using insights
+                drawn from modern and efficient systems and processes.
+            </p>
+            <img src={ele} />
+        </div>
+    </div>
+</section>
+<style>
+    .grow {
+        transition: all 0.3s ease-in-out;
+    }
+    .grow:hover {
+        transform: scale(1.1);
+    }
+</style>
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#one",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+        },
+    });
+    tl.from("#one", {
+        opacity: 0,
+        duration: 1,
+        x: -200,
+    });
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#two",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+        },
+    });
+    tl2.from("#two", {
+        opacity: 0,
+        duration: 1,
+        x: -200,
+    });
+    const tl3 = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#three",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+        },
+    });
+    tl3.from("#three", {
+        opacity: 0,
+        duration: 1,
+        x: -200,
+    });
+</script>

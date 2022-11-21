@@ -1,9 +1,63 @@
 <div
-    class="flex justify-center items-center bg-gradient-to-r from-primary to-secondary min-h-screen"
+    class="flex flex-col justify-center items-center bg-gradient-to-r from-primary to-secondary min-h-screen"
 >
-    <div class="2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl text-2xl  text-neutral">
-        <h1 class="inline font-bold">Digital Solutions</h1>
+    <div class="grow"></div>
+    <div
+        id="big-head"
+        class="2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl text-2xl text-neutral"
+    >
+        <h1 class="inline text-violet-600 font-bold">Digital Solutions</h1>
         <h3 class="inline">for</h3>
         <h1 class="italic">New Age Business Processes</h1>
     </div>
+    <div class="grow"></div>
+    <div
+        class="flex text-center flex-col pb-20 lg:flex-row gap-16 lg:gap-0 text-2xl lg:text-5xl justify-around w-full"
+    >
+        <div id="tag1" class="text-orange-300 font-bold">Associate</div>
+        <div id="tag2" class="text-orange-300 font-bold">Automate</div>
+        <div id="tag3" class="text-orange-300 font-bold">Elevate</div>
+    </div>
 </div>
+
+<script>
+    import { gsap } from "gsap";
+    let tl = gsap.timeline();
+    tl.from("#big-head", {
+        duration: 3,
+        opacity: 0,
+        y: -100,
+        stagger: 0.5,
+        ease: "power4.out",
+    })
+        .from(
+            "#tag1",
+            {
+                duration: 1,
+                opacity: 0,
+                x: -100,
+                ease: "power4.out",
+            },
+            "-=2"
+        )
+        .from(
+            "#tag2",
+            {
+                duration: 1,
+                opacity: 0,
+                x: -100,
+                ease: "power4.out",
+            },
+            "-=1.5"
+        )
+        .from(
+            "#tag3",
+            {
+                duration: 1,
+                opacity: 0,
+                x: -100,
+                ease: "power4.out",
+            },
+            "-=1"
+        );
+</script>
