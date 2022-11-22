@@ -3,19 +3,20 @@ import { Icon } from "astro-icon";
 
 const items = [
     {
-        title: "Accounting and Book-keeping services 2.0",
-        description:
-            "Full range of Accounting and Bookkeeping services for small to mid sized companies.",
-        icon: "flat-color-icons:calculator",
-    },
-    {
         title: "Business Transformation Solutions",
         description:
             "Full scale transfomation of the work, workplace and workers to ensure improved process efficiencies and better decision making.",
         icon: "flat-color-icons:video-projector",
     },
     {
-        title: "Developing empowered leaders",
+        title: "Modernized Book Keeping and Accounting Services",
+        description:
+            "Full range of Accounting and Bookkeeping services for small to mid sized companies.",
+        icon: "flat-color-icons:calculator",
+    },
+
+    {
+        title: "Developing Empowered Leaders",
         description:
             "We realize that the transformation will require significant upskilling for the workforce in order to make it successful. In line with this we provide both process and people development trainings.",
         icon: "flat-color-icons:voice-presentation",
@@ -30,7 +31,7 @@ const items = [
         <div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
             <div class="mb-8 text-center">
                 <h2
-                    class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 text-violet-500"
+                    class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 text-violet-900"
                 >
                     Our Services
                 </h2>
@@ -42,7 +43,7 @@ const items = [
                     items.map(({ title, description, icon }, index) => (
                         <div
                             id={"spin" + index}
-                            class="relative justify-between h-80 flex flex-col p-6 bg-white rounded shadow-xl hover:shadow-lg transition"
+                            class="relative justify-between h-80 flex flex-col p-6 bg-gradient-to-br from-purple-200 to-blue-200 rounded shadow-xl hover:shadow-lg transition"
                         >
                             <div class="flex items-center mb-4">
                                 <Icon name={icon} class="w-12 h-12" />
