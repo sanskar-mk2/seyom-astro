@@ -25,7 +25,7 @@ import { Image } from "@astrojs/image/components";
             </label>
             <ul
                 tabindex="0"
-                class="font-bold font-mono text-2xl menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                class="font-bold text-2xl menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
                 <li><a>Promise</a></li>
                 <li tabindex="0">
@@ -48,10 +48,10 @@ import { Image } from "@astrojs/image/components";
                         <li><a>Developing...</a></li>
                     </ul>
                 </li>
-                <li><a>Team</a></li>
+                <li><a href="/team">Team</a></li>
             </ul>
         </div>
-        <a class="btn btn-ghost h-fit text-neutral normal-case text-xl">
+        <a href="/" class="btn btn-ghost h-fit text-neutral normal-case text-xl">
             <span class="sm:hidden flex font-bold text-2xl">Séyom</span>
             <Image
                 src={logo}
@@ -62,9 +62,7 @@ import { Image } from "@astrojs/image/components";
             />
         </a>
     </div>
-    <div
-        class="font-bold font-mono text-2xl text-neutral navbar-center hidden xl:flex"
-    >
+    <div class="font-bold text-2xl text-neutral navbar-center hidden xl:flex">
         <ul class="menu menu-horizontal p-0">
             <li><a>Promise</a></li>
             <li tabindex="0">
@@ -87,7 +85,7 @@ import { Image } from "@astrojs/image/components";
                     <li><a>Developing empowered leaders</a></li>
                 </ul>
             </li>
-            <li><a>Team</a></li>
+            <li><a href="/team">Team</a></li>
         </ul>
     </div>
     <div class="navbar-end">

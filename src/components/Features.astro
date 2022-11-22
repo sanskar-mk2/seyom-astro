@@ -1,0 +1,141 @@
+---
+import { Icon } from "astro-icon";
+
+const items = [
+    {
+        title: "Accounting and Book-keeping services 2.0",
+        description:
+            "Full range of Accounting and Bookkeeping services for small to mid sized companies.",
+        icon: "flat-color-icons:calculator",
+    },
+    {
+        title: "Business Transformation Solutions",
+        description:
+            "Full scale transfomation of the work, workplace and workers to ensure improved process efficiencies and better decision making.",
+        icon: "flat-color-icons:video-projector",
+    },
+    {
+        title: "Developing empowered leaders",
+        description:
+            "We realize that the transformation will require significant upskilling for the workforce in order to make it successful. In line with this we provide both process and people development trainings.",
+        icon: "flat-color-icons:voice-presentation",
+    },
+];
+---
+
+<section
+    class="flex items-center justify-center bg-gradient-to-r from-primary to-secondary min-h-screen"
+>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+            <div class="mb-8 text-center">
+                <h2
+                    class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 text-violet-500"
+                >
+                    Our Services
+                </h2>
+            </div>
+            <div
+                class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12"
+            >
+                {
+                    items.map(({ title, description, icon }, index) => (
+                        <div
+                            id={"spin" + index}
+                            class="relative justify-between h-80 flex flex-col p-6 bg-white rounded shadow-xl hover:shadow-lg transition"
+                        >
+                            <div class="flex items-center mb-4">
+                                <Icon name={icon} class="w-12 h-12" />
+
+                                <div class="ml-4 text-xl text-violet-900 font-bold">
+                                    {title}
+                                </div>
+                            </div>
+                            <p class="text-gray-500 text-md">{description}</p>
+                            <div class="max-w-none px-6 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+                                <div class="flex w-full sm:w-auto">
+                                    <a
+                                        class="btn text-white bg-gray-900 hover:bg-gray-700 w-full"
+                                        href="#features"
+                                    >
+                                        Learn more
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    // #spin0, #spin1, #spin2 will be animated in sequence
+    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem, index) => {
+        ScrollTrigger.create({
+            trigger: elem,
+            start: "top 80%",
+            onEnter: () => {
+                gsap.to(elem, {
+                    duration: 1,
+                    y: 0,
+                    opacity: 1,
+                    ease: "power4.out",
+                    stagger: {
+                        amount: 0.3,
+                    },
+                });
+            },
+            onEnterBack: () => {
+                gsap.to(elem, {
+                    duration: 1,
+                    y: 0,
+                    opacity: 1,
+                    ease: "power4.out",
+                    stagger: {
+                        amount: 0.3,
+                    },
+                });
+            },
+            onLeave: () => {
+                gsap.to(elem, {
+                    duration: 1,
+                    y: 100,
+                    opacity: 0,
+                    ease: "power4.out",
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to(elem, {
+                    duration: 1,
+                    y: 100,
+                    opacity: 0,
+                    ease: "power4.out",
+                });
+            },
+        });
+    });
+    // #spin0, #spin1, #spin2 will parallax on hover if width is greater than 1023px
+    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem, index) => {
+        if (window.innerWidth > 1023) {
+            elem.addEventListener("mouseenter", () => {
+                gsap.to(elem, {
+                    duration: 0.5,
+                    y: -20,
+                    ease: "power4.out",
+                });
+            });
+            elem.addEventListener("mouseleave", () => {
+                gsap.to(elem, {
+                    duration: 0.5,
+                    y: 0,
+                    ease: "power4.out",
+                });
+            });
+        }
+    });
+</script>
