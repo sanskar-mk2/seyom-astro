@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import chevron_down from "../assets/images/chevron-down.svg";
+import Features from "./Features.astro";
 ---
 
 <div
@@ -15,7 +16,7 @@ import chevron_down from "../assets/images/chevron-down.svg";
     </div>
     <div
         id="what-we-do-para"
-        class="flex text-center flex-col pb-20 lg:flex-row gap-16 lg:gap-0 text-2xl px-12 pt-12 lg:text-4xl justify-around w-full"
+        class="flex text-center flex-col lg:flex-row gap-16 lg:gap-0 text-2xl px-12 pt-12 lg:text-4xl justify-around w-full"
     >
         <p class="text-base-200">
             We offer a suite of automation services across industries and
@@ -23,20 +24,7 @@ import chevron_down from "../assets/images/chevron-down.svg";
             use it for faster and more effective decision making.
         </p>
     </div>
-    <div class="grow"></div>
-    <div id="arrow-down" class="flex text-center flex-col items-center pb-16 animate-bounce">
-        <p class="text-black text-xl">Know More</p>
-        <svg
-            class="w-12 h-12 fill-black"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-                fill-rule="evenodd"
-                d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-        </svg>
-    </div>
+    <Features />
 </div>
 
 <script>
@@ -65,15 +53,5 @@ import chevron_down from "../assets/images/chevron-down.svg";
         opacity: 0,
         duration: 1,
     });
-    gsap.from("#arrow-down", {
-        scrollTrigger: {
-            trigger: "#arrow-down",
-            start: "top 90%",
-            end: "bottom 60%",
-            scrub: true,
-        },
-        y: 100,
-        opacity: 0,
-        duration: 1,
-    });
+
 </script>

@@ -109,4 +109,14 @@ import { Image } from "@astrojs/image/components";
             });
         }
     });
+    // display #nav-section when mouse hovered to top of the page
+    window.addEventListener("mousemove", (e) => {
+        if (e.clientY <= 100) {
+            gsap.to("#nav-section", {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+            });
+        }
+    });
 </script>

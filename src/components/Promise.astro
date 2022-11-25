@@ -4,221 +4,201 @@ const our_promise = [
     "Increased Efficiencies",
     "Inclusive Growth",
 ];
+import { Image } from "@astrojs/image/components";
+import promise from "../assets/images/undraw_pitching_re_fpgk.svg";
 ---
 
 <section
-    class="h-fit pt-48 md:pt-0 md:min-h-screen flex justify-center items-center bg-gradient-to-r from-purple-200 to-blue-200"
+    class="flex items-center min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 py-10 text-gray-800"
 >
-    <div class="gcontainer">
-        <div class="gone z-20 w-60 h-60 flex justify-center items-center">
-            <div
-                class="w-48 h-48 backdrop-blur-3xl bg-gradient-to-br from-violet-600 to-blue-200 text-white rounded-full border-2 border-violet-600 flex justify-center items-center"
-            >
-                <p class="text-center">{our_promise[0]}</p>
-            </div>
+    <div class="container mx-auto w-full max-w-screen-xl">
+        <div class="w-full overflow-x-hidden">
+            <!-- <h2 class="text-center text-violet-900 text-3xl font-extrabold">
+                Our Promise To You
+            </h2> -->
+            <svg id="anim-on-enter" class="hidden" viewBox="0 0 2000 300">
+                <text
+                    class="fill-violet-900"
+                    x="50%"
+                    y="50%"
+                    dy=".35em"
+                    text-anchor="middle"
+                >
+                    our promise to you
+                </text>
+            </svg>
         </div>
-        <div class="gtwo z-20 w-60 h-60 flex justify-end">
-            <div
-                class="w-48 h-48 backdrop-blur-3xl bg-gradient-to-br from-violet-600 to-blue-200 text-white rounded-full border-2 border-violet-600 flex justify-center items-center"
-            >
-                <p class="text-center">{our_promise[1]}</p>
+
+        <div class="flex justify-between">
+            <div class="flex flex-col">
+                <div class="w-full p-4 text-left">
+                    <hr id="hr1" class="mb-4 h-1.5 bg-purple-600" />
+                    <h3
+                        id="h31"
+                        class="font-sans text-4xl font-light leading-10"
+                    >
+                        {our_promise[0]}
+                    </h3>
+                </div>
+                <div class="w-full p-4 text-left">
+                    <hr id="hr2" class="mb-4 h-1.5 bg-purple-600" />
+                    <h3
+                        id="h32"
+                        class="font-sans text-4xl font-light leading-10"
+                    >
+                        {our_promise[1]}
+                    </h3>
+                </div>
+                <div class="w-full p-4 text-left">
+                    <hr id="hr3" class="mb-4 h-1.5 bg-purple-600" />
+                    <h3
+                        id="h33"
+                        class="font-sans co text-4xl font-light leading-10"
+                    >
+                        {our_promise[2]}
+                    </h3>
+                </div>
             </div>
-        </div>
-        <div class="gthree w-60 h-60 flex">
-            <div
-                class="w-48 h-48 md:w-36 md:h-36 backdrop-blur-3xl bg-gradient-to-br from-violet-600 to-blue-200 text-white rounded-full border-2 border-violet-600 flex justify-center items-center"
-            >
-                <p class="text-center">{our_promise[2]}</p>
-            </div>
-        </div>
-        <div class="gtitle z-10 w-60 h-60 flex justify-center items-center">
-            <div
-                class="w-52 h-52 backdrop-blur-3xl bg-gradient-to-br text-violet-600 rounded-full border-2 border-violet-600 flex justify-center items-center"
-            >
-                <div
-                    class="gring w-60 h-60 absolute rounded-full border-dashed border-2 border-violet-600/80"
-                >
-                </div>
-                <div
-                    class="gring w-64 h-64 absolute rounded-full border-dashed border-2 border-violet-600/70"
-                >
-                </div>
-                <div
-                    class="gring w-72 h-72 absolute rounded-full border-dashed border-2 border-violet-600/50"
-                >
-                </div>
-                <div
-                    class="gring w-80 h-80 absolute rounded-full border-dashed border-2 border-violet-600/30"
-                >
-                </div>
-                <div
-                    class="gring w-96 h-96 absolute rounded-full border-dashed border-2 border-violet-600/20"
-                >
-                </div>
-                <div
-                    class="gring w-[500px] h-[500px] absolute rounded-full border-dashed border-2 border-violet-600/10"
-                >
-                </div>
-                <p class="font-bold text-xl text-center">Our Promise To You</p>
-            </div>
+
+            <img src={promise} class="w-5/12" />
         </div>
     </div>
 </section>
 
 <style>
-    @media (max-width: 768px) {
-        .gcontainer {
-            display: flex !important;
-            flex-direction: column-reverse;
-        }
-        .gone,
-        .gtwo,
-        .gthree {
-            justify-content: center !important;
-            align-items: center !important;
-        }
-        .gtwo {
-            transform: translateY(-200px) !important;
-        }
-        .gone {
-            transform: translateY(-300px) !important;
-        }
-        .gthree {
-            transform: translateY(-100px) !important;
-        }
-        .gring {
-            display: none;
-        }
+    svg {
+        font-weight: 700;
     }
-    .gcontainer {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            ". gone ."
-            ". gtitle ."
-            "gtwo . gthree";
+    svg text {
+        text-transform: uppercase;
+        animation: stroke 3s forwards alternate;
+        stroke-width: 2;
+        stroke: #365fa0;
+        font-size: 120px;
     }
-
-    .gone {
-        grid-area: gone;
-    }
-
-    .gtwo {
-        grid-area: gtwo;
-    }
-
-    .gthree {
-        grid-area: gthree;
-    }
-
-    .gtitle {
-        grid-area: gtitle;
+    @keyframes stroke {
+        0% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: rgba(54, 95, 160, 1);
+            stroke-dashoffset: 25%;
+            stroke-dasharray: 0 50%;
+            stroke-width: 2;
+        }
+        70% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: rgba(54, 95, 160, 1);
+        }
+        80% {
+            fill: rgba(72, 138, 20, 0);
+            stroke: rgba(54, 95, 160, 1);
+            stroke-width: 3;
+        }
+        100% {
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 50% 0;
+            stroke-width: 0;
+        }
     }
 </style>
 
 <script>
-    // except mobile devices
     import { gsap } from "gsap";
-    if (window.innerWidth > 768) {
-        // float .gone, .gtwo, .gthree around
-        gsap.to(".gone", {
-            duration: 2,
-            x: 5,
-            y: 12,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-        });
-        gsap.to(".gtwo", {
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+    // remove hidden class when #anim-on-enter is in view
+    gsap.to("#anim-on-enter", {
+        scrollTrigger: {
+            trigger: "#anim-on-enter",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+        },
+        duration: 0.1,
+        opacity: 1,
+        onComplete: () => {
+            document.getElementById("anim-on-enter").classList.remove("hidden");
+        },
+    });
+    let timeline = gsap.timeline();
+    // grow #hr1, #hr2, #hr3 on scroll
+    timeline
+        .from("#hr1", {
+            scrollTrigger: {
+                trigger: "#hr1",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            width: 0,
+        })
+        .from("#hr2", {
+            scrollTrigger: {
+                trigger: "#hr2",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            width: 0,
+        })
+        .from("#hr3", {
+            scrollTrigger: {
+                trigger: "#hr3",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            width: 0,
+        })
+        // fade in #h31, #h32, #h33 on scroll
+        .from("#h31", {
+            scrollTrigger: {
+                trigger: "#h31",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            opacity: 0,
+        })
+        .from("#h32", {
+            scrollTrigger: {
+                trigger: "#h32",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            opacity: 0,
+        })
+        .from("#h33", {
+            scrollTrigger: {
+                trigger: "#h33",
+                start: "top 80%",
+                end: "bottom 50%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
+            duration: 1,
+            opacity: 0,
+        })
+        // play animation: stroke 3s forwards alternate; on scroll
+        .from("#anim-on-enter text", {
+            scrollTrigger: {
+                trigger: "#anim-on-enter",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none",
+                scrub: true,
+            },
             duration: 3,
-            x: -15,
-            y: 11,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
+            opacity: 0,
         });
-        gsap.to(".gthree", {
-            duration: 4,
-            x: 20,
-            y: -23,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-        });
-        // make .gtitle grow and shrink
-        gsap.to(".gtitle", {
-            duration: 2,
-            scale: 1.1,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-        });
-        // make .gone, .gtwo, .gthree animate faster when mouse is over
-        const paused1 = gsap.to(".gone", {
-            duration: 0.5,
-            x: 5,
-            y: 12,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            paused: true,
-        });
-        const paused2 = gsap.to(".gtwo", {
-            duration: 0.5,
-            x: -15,
-            y: 11,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            paused: true,
-        });
-        const paused3 = gsap.to(".gthree", {
-            duration: 0.5,
-            x: 20,
-            y: -23,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            paused: true,
-        });
-        const paused4 = gsap.to(".gtitle", {
-            duration: 0.5,
-            scale: 1.1,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            paused: true,
-        });
-        const container = document.querySelector(".gone");
-        container.addEventListener("mouseenter", () => {
-            paused1.play();
-        });
-        container.addEventListener("mouseleave", () => {
-            paused1.pause();
-        });
-        const container2 = document.querySelector(".gtwo");
-        container2.addEventListener("mouseenter", () => {
-            paused2.play();
-        });
-        container2.addEventListener("mouseleave", () => {
-            paused2.pause();
-        });
-        const container3 = document.querySelector(".gthree");
-        container3.addEventListener("mouseenter", () => {
-            paused3.play();
-        });
-        container3.addEventListener("mouseleave", () => {
-            paused3.pause();
-        });
-        const container4 = document.querySelector(".gtitle");
-        container4.addEventListener("mouseenter", () => {
-            paused4.play();
-        });
-        container4.addEventListener("mouseleave", () => {
-            paused4.pause();
-        });
-    }
 </script>
