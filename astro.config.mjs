@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-
+import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
@@ -8,10 +8,12 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://seyom-3.vercel.app',
     integrations: [
         tailwind(),
         image({
             serviceEntryPoint: "@astrojs/image/sharp",
         }),
+        robotsTxt(),
     ],
 });
