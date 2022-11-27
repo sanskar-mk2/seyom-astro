@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image, Picture } from "@astrojs/image/components";
 import TeamImg1 from "../assets/images/sukh.jpg";
 import TeamImg2 from "../assets/images/aru.jpg";
 import TeamImg3 from "../assets/images/3.jpg";
@@ -57,18 +57,20 @@ const team = [
             team.map((item) => (
                 <>
                     <div class="group md:flex-row flex-col flex">
-                        <div class="w-full flex justify-center">
+                        <div class="w-full items-center flex justify-center">
                             <div class="w-1/2 md:w-full aspect-square">
                                 <Image
-                                    {...item.avatar}
+                                    src={item.avatar.src}
+                                    aspectRatio={item.avatar.width / item.avatar.height}
+                                    width={200}
                                     format="avif"
                                     alt="Team"
-                                    class="border-solid border-purple-900 border-2 w-full grayscale group-hover:grayscale-0 h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
+                                    class="rounded-full w-full border-solid border-purple-900 border-2 grayscale group-hover:grayscale-0 h-full object-cover transition  group-hover:-translate-y-1 group-hover:shadow-xl"
                                 />
                             </div>
                         </div>
                         <div class="mt-4 max-w-2xl text-center">
-                            <h2 class="text-xl underline inline text-slate-800 group-hover:font-bold group-hover:text-violet-700">
+                            <h2 class="text-xl inline text-slate-800 group-hover:font-bold group-hover:text-violet-700">
                                 {" "}
                                 {item.name}
                             </h2>
@@ -78,7 +80,7 @@ const team = [
                                     {item.title}
                                 </span>
                             </h3>
-                            <p class="text-lg text-start pl-4 text-gray-900">
+                            <p class="text-lg text-justify px-2 text-gray-900">
                                 {item.description}
                             </p>
                         </div>

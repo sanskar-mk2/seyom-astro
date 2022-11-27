@@ -2,21 +2,17 @@
 import { Image } from "@astrojs/image/components";
 import chevron_down from "../assets/images/chevron-down.svg";
 import Features from "./Features.astro";
+import Heading from "./Heading.astro";
 ---
 
 <div
     class="flex flex-col justify-center items-center bg-gradient-to-r from-purple-200 to-blue-200 min-h-screen"
 >
     <div class="grow"></div>
-    <div
-        id="what-we-do-head"
-        class="2xl:text-8xl xl:text-7xl lg:text-6xl md:text-5xl text-4xl text-neutral"
-    >
-        <h2 class="font-bold text-violet-900">What We Do</h2>
-    </div>
+    <Heading id="what-we-do-head" title="What We Do" />
     <div
         id="what-we-do-para"
-        class="flex text-center flex-col lg:flex-row gap-16 lg:gap-0 text-2xl px-12 pt-12 lg:text-4xl justify-around w-full"
+        class="flex text-center flex-col lg:flex-row gap-16 lg:gap-0 text-lg px-12 pt-2 lg:text-xl justify-around w-full"
     >
         <p class="text-base-200">
             We offer a suite of automation services across industries and

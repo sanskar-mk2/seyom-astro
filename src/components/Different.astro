@@ -31,14 +31,15 @@ const items = [
 ---
 
 <section
-    class="bg-gradient-to-r flex items-center justify-center from-purple-200 to-blue-200 text-white"
+    class="overflow-x-hidden min-h-screen bg-gradient-to-r flex items-center justify-center from-purple-200 to-blue-200 text-white"
 >
     <div class="mx-auto px-4 py-16 sm:max-w-xl lg:max-w-full lg:px-8 lg:py-20">
         <div
             class="mb-10 max-w-xl sm:text-center lg:mx-auto lg:mb-12 lg:max-w-2xl"
         >
             <h2
-                class="mb-6 max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl lg:mx-auto"
+                id="diffhead"
+                class="mb-6 text-center max-w-lg font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl lg:mx-auto"
             >
                 <span class="relative inline-block">
                     <svg
@@ -62,7 +63,7 @@ const items = [
                             width="52"
                             height="24"></rect>
                     </svg>
-                    <span id="diffhead" class="text-violet-900 leading-10"
+                    <span class="text-violet-900 leading-10"
                         >What Makes Us Different</span
                     >
                 </span>
@@ -186,8 +187,8 @@ const items = [
         scrollTrigger: {
             trigger: "#diffhead",
             start: "top 80%",
-            end: "bottom 80%",
-            toggleActions: "play none none none",
+            end: "bottom 50%",
+            scrub: true,
         },
         opacity: 0,
         duration: 1,
@@ -200,7 +201,7 @@ const items = [
             trigger: "#diff1",
             start: "top 80%",
             end: "bottom 80%",
-            toggleActions: "play none none none",
+            scrub: true,
         },
         opacity: 0,
         duration: 1,
@@ -211,7 +212,7 @@ const items = [
             trigger: "#diff3",
             start: "top 80%",
             end: "bottom 80%",
-            toggleActions: "play none none none",
+            scrub: true,
         },
         opacity: 0,
         duration: 1,

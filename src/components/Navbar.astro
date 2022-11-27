@@ -1,15 +1,15 @@
 ---
 import logo from "../assets/images/logo.png";
-import { Image } from "@astrojs/image/components";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
 <div
     id="nav-section"
-    class="shadow-xl justify-between z-50 navbar bg-gradient-to-r from-blue-100 to-purple-100 fixed md:top-10 md:w-11/12 md:mx-auto rounded pr-6 md:pr-10 md:left-10 md:right-10"
+    class="shadow-xl py-2 sm:py-0 justify-between z-50 flex w-full items-center bg-gradient-to-r from-blue-100 to-purple-100 fixed md:top-10 md:w-11/12 md:mx-auto rounded pr-6 md:pr-10 md:left-10 md:right-10"
 >
-    <div class="navbar-start">
-        <div class="dropdown">
-            <span tabindex="0" class="btn btn-ghost 2xl:hidden">
+    <div class="flex">
+        <div class="dropdown inline-flex items-center">
+            <span tabindex="0" class="btn btn-ghost lg:hidden">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-5 w-5 stroke-neutral"
@@ -29,15 +29,17 @@ import { Image } from "@astrojs/image/components";
             >
                 <li>
                     <a href="/business-transformation"
-                        >Business Transformation</a>
+                        >Business Transformation</a
+                    >
                 </li>
                 <li>
                     <a href="/accounting-and-bookkeeping"
-                        >Modernized Accounting</a>
+                        >Modernized Accounting</a
+                    >
                 </li>
                 <li>
-                    <a href="/developing-empowered-leaders"
-                        >Empowered Leaders</a>
+                    <a href="/developing-empowered-leaders">Empowered Leaders</a
+                    >
                 </li>
                 <li><a href="/team">Our Team</a></li>
             </ul>
@@ -47,38 +49,60 @@ import { Image } from "@astrojs/image/components";
             class="btn btn-ghost h-fit text-neutral normal-case text-xl"
         >
             <span class="sm:hidden flex font-bold text-2xl">Séyom</span>
-            <Image
+            <Picture
                 src={logo}
                 alt="Logo containing a circle and arrow"
                 class="hidden sm:flex"
-                width={300}
+                widths={[250, 300]}
+                sizes="(max-width: 1079px) 250px, 300px"
                 dimensions="15:5"
             />
         </a>
     </div>
-    <div>
-        <div
-            class="font-bold text-lg text-neutral navbar-center hidden 2xl:flex"
-        >
+    <div class="w-full flex justify-end">
+        <div class="font-bold text-lg text-neutral hidden lg:flex">
             <ul class="menu menu-horizontal p-0">
                 <li>
-                    <a href="/business-transformation"
-                        >Business Transformation</a>
+                    <a
+                        class="justify-center gap-0 flex 2xl:gap-2 flex-col 2xl:flex-row"
+                        href="/business-transformation"
+                    >
+                        <span>Business</span>
+                        <span>Transformation</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="/accounting-and-bookkeeping"
-                        >Modernized Accounting</a>
+                    <a
+                        class="justify-center gap-0 flex 2xl:gap-2 flex-col 2xl:flex-row"
+                        href="/accounting-and-bookkeeping"
+                    >
+                        <span>Modernized</span>
+                        <span>Accounting</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="/developing-empowered-leaders"
-                        >Empowered Leaders</a>
+                    <a
+                        class="justify-center gap-0 2xl:gap-2 flex flex-col 2xl:flex-row"
+                        href="/developing-empowered-leaders"
+                    >
+                        <span>Empowered</span>
+                        <span>Leaders</span>
+                    </a>
                 </li>
-                <li><a href="/team">Our Team</a></li>
+                <li>
+                    <a
+                        class="justify-center gap-0 2xl:gap-2 flex flex-col 2xl:flex-row"
+                        href="/team"
+                    >
+                        <span>Our</span>
+                        <span>Team</span>
+                    </a>
+                </li>
             </ul>
         </div>
-        <div class="ml-2 navbar-end">
+        <div class="ml-2 items-center flex">
             <a
-                class="btn w-32 border-fuchsia-900 bg-gradient-to-r from-accent to-purple-400 text-base-100/80 hover:text-base-100 font-bold"
+                class="btn hover:animate-pulse shadow-xl shadow-blue-900/30 w-32 border-fuchsia-900 bg-gradient-to-r from-accent to-purple-400 text-base-100/80 hover:text-base-100 font-bold"
                 >Contact Us</a
             >
         </div>

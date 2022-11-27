@@ -2,47 +2,68 @@
 import ass from "../assets/images/undraw_business_deal_re_up4u.svg";
 import aut from "../assets/images/undraw_data_report_re_p4so.svg";
 import ele from "../assets/images/undraw_stepping_up_g6oo.svg";
+import { Image } from "@astrojs/image/components";
 ---
 
 <section
     class="min-h-screen flex bg-gradient-to-r from-purple-200 to-blue-200 items-center"
 >
-    <div class="prose-sm lg:prose-sm 2xl:prose-lg flex gap-4 xl:gap-10 xl:flex-row flex-col items-center xl:items-stretch xl:justify-around w-full px-10">
+    <div
+        class="prose-sm lg:prose-sm 2xl:prose-lg flex gap-4 xl:gap-10 xl:flex-row flex-col items-center xl:items-stretch xl:justify-around w-full px-10"
+    >
         <div
             id="one"
-            class="flex flex-col text-center w-5/6 xl:w-full rounded text-base-100 bg-gradient-to-br from-purple-300 to-blue-300 px-8"
+            class="shadow-xl flex flex-col text-center w-5/6 xl:w-full rounded text-base-100 bg-gradient-to-br from-purple-300 to-blue-300 px-8"
         >
-            <h2>Associate</h2>
+            <h2 class="text-violet-900 font-semibold">Associate</h2>
             <p class="grow">
                 Associate with us to harness the power of data automation and
                 analaytics to transform your business processes.
             </p>
-            <img src={ass} height="200px" alt="Associate" class="self-center" />
+            <Image
+                src={ass}
+                height={128}
+                aspectRatio={758.67004 / 615.32637}
+                alt="Associate"
+                class="self-center"
+            />
         </div>
         <div
             id="two"
-            class="flex flex-col text-center w-5/6 xl:w-full rounded text-white bg-gradient-to-b from-purple-900 to-blue-900 rp px-8"
+            class="shadow-xl flex flex-col text-center w-5/6 xl:w-full rounded text-white bg-gradient-to-b from-purple-900 to-blue-900 rp px-8"
         >
-            <h2>Automate</h2>
+            <h2 class="text-violet-100 font-semibold">Automate</h2>
             <p class="grow">
                 Experience first hand the benefits of data warehousing,
                 visualization and integration to drive faster decision making
                 using real time predictive analytics.
             </p>
-            <img src={aut} height="200px" alt="Automate" class="w-8/12 self-center" />
+            <Image
+                src={aut}
+                height={128}
+                aspectRatio={786.97931 / 590.64559}
+                alt="Automate"
+                class="self-center"
+            />
         </div>
         <div
             id="three"
-            class="flex flex-col text-center w-5/6 xl:w-full rounded text-base-100 bg-gradient-to-bl from-purple-300 to-blue-300 px-8"
+            class="shadow-xl flex flex-col text-center w-5/6 xl:w-full rounded text-base-100 bg-gradient-to-bl from-purple-300 to-blue-300 px-8"
         >
-            <h2>Elevate</h2>
+            <h2 class="text-violet-900 font-semibold">Elevate</h2>
             <p class="grow">
                 Empower your people to go beyond traditional book keeping and
                 analyst roles to thought partners, strategists and leaders who
                 are capable of making sound business decisions using insights
                 drawn from modern and efficient systems and processes.
             </p>
-            <img src={ele} height="200px" alt="Elevate" class=" self-center" />
+            <Image
+                src={ele}
+                height={128}
+                aspectRatio={649.6753 / 516.23162}
+                alt="Elevate"
+                class="self-center"
+            />
         </div>
     </div>
 </section>
