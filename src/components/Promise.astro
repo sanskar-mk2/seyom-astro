@@ -67,7 +67,7 @@ import Heading from "./Heading.astro";
     </div>
 </section>
 
-<style>
+<!-- <style>
     svg {
         font-weight: 700;
     }
@@ -101,26 +101,26 @@ import Heading from "./Heading.astro";
             stroke-width: 0;
         }
     }
-</style>
+</style> -->
 
 <script>
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
     // remove hidden class when #anim-on-enter is in view
-    gsap.to("#anim-on-enter", {
-        scrollTrigger: {
-            trigger: "#anim-on-enter",
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-        },
-        duration: 0.1,
-        opacity: 1,
-        onComplete: () => {
-            document.getElementById("anim-on-enter").classList.remove("hidden");
-        },
-    });
+    // gsap.to("#anim-on-enter", {
+    //     scrollTrigger: {
+    //         trigger: "#anim-on-enter",
+    //         start: "top 80%",
+    //         end: "bottom 20%",
+    //         toggleActions: "play none none none",
+    //     },
+    //     duration: 0.1,
+    //     opacity: 1,
+    //     onComplete: () => {
+    //         document.getElementById("anim-on-enter").classList.remove("hidden");
+    //     },
+    // });
     let timeline = gsap.timeline();
     // grow #hr1, #hr2, #hr3 on scroll
     timeline
@@ -192,17 +192,17 @@ import Heading from "./Heading.astro";
             opacity: 0,
         })
         // play animation: stroke 3s forwards alternate; on scroll
-        .from("#anim-on-enter text", {
-            scrollTrigger: {
-                trigger: "#anim-on-enter",
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 3,
-            opacity: 0,
-        });
+        // .from("#anim-on-enter text", {
+        //     scrollTrigger: {
+        //         trigger: "#anim-on-enter",
+        //         start: "top 80%",
+        //         end: "bottom 20%",
+        //         toggleActions: "play none none none",
+        //         scrub: true,
+        //     },
+        //     duration: 3,
+        //     opacity: 0,
+        // });
         // scrub #promisehead on scroll
         gsap.from("#promisehead", {
             scrollTrigger: {
