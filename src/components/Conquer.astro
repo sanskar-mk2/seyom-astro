@@ -1,0 +1,142 @@
+---
+const stack1 = [
+    "Advanced financial modelling",
+    "Performance Dashboards",
+    "Process Benchmarking",
+    "Feasibility Evaluations",
+    "Project Management template",
+];
+
+const stack2 = [
+    "Data Warehousing",
+    "Visualization and Automation",
+    "Scalability through app development",
+];
+---
+
+<div
+    class="py-12 px-2 flex flex-col justify-center items-center bg-gradient-to-r from-purple-200 to-blue-200 min-h-screen"
+>
+    <div class="grow h-0 sm:h-32"></div>
+
+    <div
+        class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    >
+        <div class="flex flex-col mb-6 lg:flex-row md:mb-10">
+            <div class="lg:w-1/2">
+                <h2
+                    class="max-w-md mb-6 font-sans text-3xl font-bold tracking-tight text-violet-900 sm:text-4xl sm:leading-none xl:max-w-lg"
+                >
+                    Business Transformation Solutions
+                </h2>
+            </div>
+            <div class="lg:w-1/2">
+                <p class="text-base text-gray-900 md:text-lg">
+                    Service Suite: Full scale transfomation of the work,
+                    workplace and workers to ensure improved process
+                    efficiencies and better decision making
+                </p>
+            </div>
+        </div>
+        <div class="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-2">
+            <div>
+                <div
+                    class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-purple-500 shadow-lg"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-7 h-7 text-white"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                        ></path>
+                    </svg>
+                </div>
+                <h6 class="mb-2 text-violet-800 font-semibold leading-5">
+                    Analytics and insights
+                </h6>
+                <ul class="mb-4 -ml-1 space-y-2 text-gray-900">
+                    {
+                        stack1.map((item) => (
+                            <li class="flex items-start">
+                                <span class="mr-1">
+                                    <svg
+                                        class="w-5 h-5 mt-px text-deep-purple-accent-400"
+                                        stroke="currentColor"
+                                        viewBox="0 0 52 52"
+                                    >
+                                        <polygon
+                                            stroke-width="4"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            fill="none"
+                                            points="29 13 14 29 25 29 23 39 38 23 27 23"
+                                        />
+                                    </svg>
+                                </span>
+                                {item}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div>
+                <div
+                    class="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-purple-500 shadow-lg"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-7 h-7 text-white"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"
+                        ></path>
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h6 class="mb-2 font-semibold leading-5 text-violet-800">
+                    Process Automation and improvements
+                </h6>
+                <ul class="mb-4 text-gray-900 -ml-1 space-y-2">
+                    {
+                        stack2.map((item) => (
+                            <li class="flex items-start">
+                                <span class="mr-1">
+                                    <svg
+                                        class="w-5 h-5 mt-px text-deep-purple-accent-400"
+                                        stroke="currentColor"
+                                        viewBox="0 0 52 52"
+                                    >
+                                        <polygon
+                                            stroke-width="4"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            fill="none"
+                                            points="29 13 14 29 25 29 23 39 38 23 27 23"
+                                        />
+                                    </svg>
+                                </span>
+                                {item}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
