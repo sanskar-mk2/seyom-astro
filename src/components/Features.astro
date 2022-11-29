@@ -34,27 +34,17 @@ const items = [
                 items.map(({ title, description, icon, href }, index) => (
                     <div
                         id={"spin" + index}
-                        class="relative justify-between h-80 flex flex-col p-6 bg-gradient-to-br from-purple-300 to-blue-300 rounded shadow-xl hover:shadow-lg transition"
+                        class="relative justify-between h-64 flex flex-col p-6 bg-gradient-to-br from-purple-300 to-blue-300 rounded shadow-xl hover:shadow-lg transition"
                     >
                         <div class="flex items-center mb-4">
                             <Icon name={icon} class="w-12 h-12" />
 
                             <div class="ml-4 text-xl text-violet-900 font-bold">
-                                {title}
+                                <a class="underline" href="{href}">{title}</a>
                             </div>
                         </div>
                         <p class="text-gray-500 text-md">{description}</p>
                         <div class="grow" />
-                        <div class="max-w-none px-6 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-                            <div class="flex w-full sm:w-auto">
-                                <a
-                                    class="btn text-white bg-gray-900 hover:bg-gray-700 w-full"
-                                    href={href}
-                                >
-                                    Learn more
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 ))
             }
