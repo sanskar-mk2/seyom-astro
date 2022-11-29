@@ -4,16 +4,16 @@ const our_promise = [
     "Increased Efficiencies",
     "Inclusive Growth",
 ];
-import { Image } from "@astrojs/image/components";
-import promise from "../assets/images/undraw_pitching_re_fpgk.svg";
+import { Picture } from "@astrojs/image/components";
 import Heading from "./Heading.astro";
+import promise from "../assets/images/handshake.jpg";
 ---
 
 <section
     class="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 py-10 text-gray-800"
 >
-    <div class="w-full">
-        <div class="w-full">
+    <div class="w-full flex flex-col items-center">
+        <div class="w-full flex justify-center">
             <!-- <h2 class="text-center text-violet-900 text-3xl font-extrabold">
                 Our Promise To You
             </h2> -->
@@ -31,38 +31,24 @@ import Heading from "./Heading.astro";
             <Heading id="promisehead" title="Our Promise To You" />
         </div>
 
-        <div class="flex justify-around">
-            <div class="flex flex-col">
-                <div class="w-full p-4 text-left">
-                    <hr id="hr1" class="mb-4 h-1.5 bg-purple-600" />
-                    <h3
-                        id="h31"
-                        class="font-sans text-4xl font-light leading-10"
-                    >
-                        {our_promise[0]}
-                    </h3>
-                </div>
-                <div class="w-full p-4 text-left">
-                    <hr id="hr2" class="mb-4 h-1.5 bg-purple-600" />
-                    <h3
-                        id="h32"
-                        class="font-sans text-4xl font-light leading-10"
-                    >
-                        {our_promise[1]}
-                    </h3>
-                </div>
-                <div class="w-full p-4 text-left">
-                    <hr id="hr3" class="mb-4 h-1.5 bg-purple-600" />
-                    <h3
-                        id="h33"
-                        class="font-sans co text-4xl font-light leading-10"
-                    >
-                        {our_promise[2]}
-                    </h3>
-                </div>
+        <div
+            class="max-w-7xl grid mt-4 md:grid-cols-2 grid-cols-1 justify-around"
+        >
+            <div class="flex justify-center p-4 flex-col">
+                <span class="text-2xl lg:text-3xl xl:text-4xl" id="type-it"></span>
             </div>
-
-            <img alt="Promise" height="200px" src={promise} class="hidden md:flex" />
+            <div class="p-4 hidden md:flex">
+                <Picture
+                    class="hidden md:flex"
+                    src={promise}
+                    alt="handshake"
+                    aspectRatio="6:4"
+                    widths={[500, 1000]}
+                    sizes="(max-width: 1079px) 500px, 1000px"
+                    formats={["webp", "avif"]}
+                    
+                />
+            </div>
         </div>
     </div>
 </section>
@@ -105,114 +91,182 @@ import Heading from "./Heading.astro";
 
 <script>
     import { gsap } from "gsap";
+    import TypeIt from "typeit";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
-    // remove hidden class when #anim-on-enter is in view
-    // gsap.to("#anim-on-enter", {
-    //     scrollTrigger: {
-    //         trigger: "#anim-on-enter",
-    //         start: "top 80%",
-    //         end: "bottom 20%",
-    //         toggleActions: "play none none none",
-    //     },
-    //     duration: 0.1,
-    //     opacity: 1,
-    //     onComplete: () => {
-    //         document.getElementById("anim-on-enter").classList.remove("hidden");
-    //     },
-    // });
-    let timeline = gsap.timeline();
-    // grow #hr1, #hr2, #hr3 on scroll
-    timeline
-        .from("#hr1", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 80%",
-                end: "bottom 30%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            width: 0,
-        })
-        .from("#hr2", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 60%",
-                end: "bottom 30%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            width: 0,
-        })
-        .from("#hr3", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 40%",
-                end: "bottom 30%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            width: 0,
-        })
-        // fade in #h31, #h32, #h33 on scroll
-        .from("#h31", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 80%",
-                end: "bottom 50%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            opacity: 0,
-        })
-        .from("#h32", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 60%",
-                end: "bottom 50%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            opacity: 0,
-        })
-        .from("#h33", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 40%",
-                end: "bottom 50%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            opacity: 0,
-        })
-        // play animation: stroke 3s forwards alternate; on scroll
-        // .from("#anim-on-enter text", {
-        //     scrollTrigger: {
-        //         trigger: "#anim-on-enter",
-        //         start: "top 80%",
-        //         end: "bottom 20%",
-        //         toggleActions: "play none none none",
-        //         scrub: true,
-        //     },
-        //     duration: 3,
-        //     opacity: 0,
-        // });
-        // scrub #promisehead on scroll
-        gsap.from("#promisehead", {
-            scrollTrigger: {
-                trigger: "#promisehead",
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none none none",
-                scrub: true,
-            },
-            duration: 1,
-            opacity: 0,
-        });
+    const divi = 2;
+
+    // fade-in #promisehead on scroll
+    gsap.from("#promisehead", {
+        scrollTrigger: {
+            trigger: "#promisehead",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+        },
+        opacity: 0,
+        duration: 1,
+        y: 50,
+        onComplete: () => {
+            new TypeIt("#type-it", {
+                lifeLike: false,
+                speed: 0,
+            })
+                .delete(7, { instant: true })
+                .type("✅")
+                .pause(168 / divi)
+                .type(" ")
+                .pause(504 / divi)
+                .type("S")
+                .pause(224 / divi)
+                .type("i")
+                .pause(518 / divi)
+                .type("g")
+                .pause(196 / divi)
+                .type("n")
+                .pause(784 / divi)
+                .type("i")
+                .pause(168 / divi)
+                .type("c")
+                .pause(392 / divi)
+                .delete(1)
+                .pause(98 / divi)
+                .type("f")
+                .pause(112 / divi)
+                .type("i")
+                .pause(126 / divi)
+                .type("c")
+                .pause(112 / divi)
+                .type("a")
+                .pause(252 / divi)
+                .type("n")
+                .pause(1134 / divi)
+                .type("t")
+                .pause(84 / divi)
+                .type(" ")
+                .pause(280 / divi)
+                .type("C")
+                .pause(112 / divi)
+                .type("o")
+                .pause(266 / divi)
+                .type("s")
+                .pause(112 / divi)
+                .type("t")
+                .pause(98 / divi)
+                .type(" ")
+                .pause(252 / divi)
+                .type("S")
+                .pause(98 / divi)
+                .type("a")
+                .pause(168 / divi)
+                .type("v")
+                .pause(112 / divi)
+                .type("i")
+                .pause(196 / divi)
+                .type("n")
+                .pause(70 / divi)
+                .type("g")
+                .pause(940 / divi)
+                .break()
+                .pause(379 / divi)
+                .break()
+                .pause(1400 / divi)
+                .type("✅")
+                .pause(615 / divi)
+                .type(" ")
+                .pause(560 / divi)
+                .type("I")
+                .pause(224 / divi)
+                .type("n")
+                .pause(112 / divi)
+                .type("c")
+                .pause(294 / divi)
+                .type("r")
+                .pause(98 / divi)
+                .type("e")
+                .pause(211 / divi)
+                .type("a")
+                .pause(195 / divi)
+                .type("s")
+                .pause(182 / divi)
+                .type("e")
+                .pause(210 / divi)
+                .type("d")
+                .pause(98 / divi)
+                .type(" ")
+                .pause(182 / divi)
+                .type("E")
+                .pause(196 / divi)
+                .type("f")
+                .pause(182 / divi)
+                .type("f")
+                .pause(140 / divi)
+                .type("i")
+                .pause(603 / divi)
+                .type("c")
+                .pause(182 / divi)
+                .type("i")
+                .pause(140 / divi)
+                .type("e")
+                .pause(224 / divi)
+                .type("n")
+                .pause(140 / divi)
+                .type("c")
+                .pause(280 / divi)
+                .type("i")
+                .pause(98 / divi)
+                .type("e")
+                .pause(98 / divi)
+                .type("s")
+                .pause(338 / divi)
+                .break()
+                .pause(210 / divi)
+                .break()
+                .pause(799 / divi)
+                .type("✅")
+                .pause(419 / divi)
+                .type(" ")
+                .pause(252 / divi)
+                .type("I")
+                .pause(238 / divi)
+                .type("n")
+                .pause(434 / divi)
+                .type("c")
+                .pause(99 / divi)
+                .type("l")
+                .pause(224 / divi)
+                .type("i")
+                .pause(14 / divi)
+                .type("u")
+                .pause(420 / divi)
+                .delete(1)
+                .pause(224 / divi)
+                .delete(1)
+                .pause(378 / divi)
+                .type("u")
+                .pause(196 / divi)
+                .type("s")
+                .pause(112 / divi)
+                .type("i")
+                .pause(182 / divi)
+                .type("v")
+                .pause(126 / divi)
+                .type("e")
+                .pause(127 / divi)
+                .type(" ")
+                .pause(210 / divi)
+                .type("G")
+                .pause(182 / divi)
+                .type("r")
+                .pause(71 / divi)
+                .type("o")
+                .pause(211 / divi)
+                .type("w")
+                .pause(238 / divi)
+                .type("t")
+                .pause(70 / divi)
+                .type("h")
+                .go();
+        },
+    });
 </script>

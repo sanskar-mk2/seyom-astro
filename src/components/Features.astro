@@ -28,8 +28,8 @@ const items = [
 ---
 
 <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="py-4 sm:py-6 lg:py-8 lg:pt-12">
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12">
+    <div class="sm:py-6 lg:py-8 lg:pt-2">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-10">
             {
                 items.map(({ title, description, icon, href }, index) => (
                     <div
@@ -86,7 +86,7 @@ const items = [
             onLeave: () => {
                 gsap.to(elem, {
                     duration: 1,
-                    y: 100,
+                    y: 200,
                     opacity: 0,
                     ease: "power4.out",
                 });
@@ -94,7 +94,7 @@ const items = [
             onLeaveBack: () => {
                 gsap.to(elem, {
                     duration: 1,
-                    y: 100,
+                    y: 200,
                     opacity: 0,
                     ease: "power4.out",
                 });

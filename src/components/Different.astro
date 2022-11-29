@@ -195,27 +195,15 @@ const items = [
         y: 50,
     });
 
-    // make #diff 1 come from left on scroll, #diff3 come from right
-    gsap.from("#diff1", {
+    // make #diff 1, 2, 3 slide in one after another on scroll
+    let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#diff1",
+            trigger: "#diff",
             start: "top 80%",
-            end: "bottom 80%",
-            scrub: true,
+            end: "bottom 50%",
         },
-        opacity: 0,
-        duration: 1,
-        x: -50,
     });
-    gsap.from("#diff3", {
-        scrollTrigger: {
-            trigger: "#diff3",
-            start: "top 80%",
-            end: "bottom 80%",
-            scrub: true,
-        },
-        opacity: 0,
-        duration: 1,
-        x: 50,
-    });
+    tl.from("#diff1", { x: -1000, opacity: 0, duration: 3 })
+        .from("#diff2", { x: -1000, opacity: 0, duration: 2 }, "-=0.5")
+        .from("#diff3", { x: -1000, opacity: 0, duration: 2 }, "-=0.5");
 </script>
