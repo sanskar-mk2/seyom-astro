@@ -27,14 +27,14 @@ const items = [
 ];
 ---
 
-<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+<div class="relative mx-auto px-4 sm:px-6">
     <div class="sm:py-6 lg:py-8 lg:pt-2">
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-10">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch items-start my-10">
             {
                 items.map(({ title, description, icon, href }, index) => (
                     <div
                         id={"spin" + index}
-                        class="relative justify-between h-64 flex flex-col p-6 bg-gradient-to-br from-purple-300 to-blue-300 rounded shadow-xl hover:shadow-lg transition"
+                        class="relative justify-between min-h-fit flex flex-col p-6 bg-gradient-to-br from-purple-300 to-blue-300 rounded shadow-xl hover:shadow-lg transition"
                     >
                         <div class="flex items-center mb-4">
                             <Icon name={icon} class="w-12 h-12" />

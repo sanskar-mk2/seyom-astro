@@ -10,7 +10,7 @@ import promise from "../assets/images/handshake.jpg";
 ---
 
 <section
-    class="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 py-10 text-gray-800"
+    class="px-4 flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-200 to-blue-200 py-10 text-gray-800"
 >
     <div class="w-full flex flex-col items-center">
         <div class="w-full flex justify-center">
@@ -31,242 +31,181 @@ import promise from "../assets/images/handshake.jpg";
             <Heading id="promisehead" title="Our Promise To You" />
         </div>
 
-        <div
-            class="max-w-7xl grid mt-4 md:grid-cols-2 grid-cols-1 justify-around"
-        >
-            <div class="flex justify-center p-4 flex-col">
-                <span class="text-2xl lg:text-3xl xl:text-4xl" id="type-it"></span>
+        <div class="flex w-full justify-around gap-4">
+            <div
+                id="out0"
+                class="overflow-y-hidden flex items-end relative border-fuchsia-600 w-full border-2 h-96"
+            >
+                <div
+                    class="absolute top-0 left-0 p-4 text-4xl italic font-semibold z-50"
+                >
+                    01
+                </div>
+                <div id="in0" class="p-4 w-full text-2xl font-semibold">
+                    {our_promise[0]}
+                </div>
+                <div
+                    id="pop0"
+                    class="hidden p-4 bottom-0 absolute bg-gradient-to-t from-fuchsia-400 to-fuchsia-600 flex-col justify-end w-full text-2xl font-semibold"
+                >
+                    {our_promise[0]}
+                    <p id="p0" class="text-xl pt-4 font-normal">
+                        Through streamlined operations and improved
+                        productivity. Increased efficiencies
+                    </p>
+                </div>
             </div>
-            <div class="p-4 hidden md:flex">
-                <Picture
-                    class="hidden md:flex"
-                    src={promise}
-                    alt="handshake"
-                    aspectRatio="6:4"
-                    widths={[500, 1000]}
-                    sizes="(max-width: 1079px) 500px, 1000px"
-                    formats={["webp", "avif"]}
-                    
-                />
+            <div
+                id="out1"
+                class="overflow-y-hidden flex items-end relative border-fuchsia-600 w-full border-2 h-96"
+            >
+                <div
+                    class="absolute top-0 left-0 p-4 text-4xl italic font-semibold z-50"
+                >
+                    02
+                </div>
+                <div id="in1" class="p-4 w-full text-2xl font-semibold">
+                    {our_promise[1]}
+                </div>
+                <div
+                    id="pop1"
+                    class="hidden p-4 bottom-0 absolute bg-gradient-to-t from-fuchsia-400 to-fuchsia-600 flex-col justify-end w-full text-2xl font-semibold"
+                >
+                    {our_promise[1]}
+                    <p id="p1" class="text-xl pt-4 font-normal">
+                        Through faster, error free processes
+                    </p>
+                </div>
+            </div>
+            <div
+                id="out2"
+                class="overflow-y-hidden flex items-end relative border-fuchsia-600 w-full border-2 h-96"
+            >
+                <div
+                    class="absolute top-0 left-0 p-4 text-4xl italic font-semibold z-50"
+                >
+                    03
+                </div>
+                <div id="in2" class="p-4 w-full text-2xl font-semibold">
+                    {our_promise[2]}
+                </div>
+                <div
+                    id="pop2"
+                    class="hidden p-4 bottom-0 absolute bg-gradient-to-t from-fuchsia-400 to-fuchsia-600 flex-col justify-end w-full text-2xl font-semibold"
+                >
+                    {our_promise[2]}
+                    <p id="p2" class="text-xl pt-4 font-normal">
+                        who are analytically strong and strategically inclined
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- <style>
-    svg {
-        font-weight: 700;
-    }
-    svg text {
-        text-transform: uppercase;
-        animation: stroke 3s forwards alternate;
-        stroke-width: 2;
-        stroke: #365fa0;
-        font-size: 120px;
-    }
-    @keyframes stroke {
-        0% {
-            fill: rgba(72, 138, 20, 0);
-            stroke: rgba(54, 95, 160, 1);
-            stroke-dashoffset: 25%;
-            stroke-dasharray: 0 50%;
-            stroke-width: 2;
-        }
-        70% {
-            fill: rgba(72, 138, 20, 0);
-            stroke: rgba(54, 95, 160, 1);
-        }
-        80% {
-            fill: rgba(72, 138, 20, 0);
-            stroke: rgba(54, 95, 160, 1);
-            stroke-width: 3;
-        }
-        100% {
-            stroke-dashoffset: -25%;
-            stroke-dasharray: 50% 0;
-            stroke-width: 0;
-        }
-    }
-</style> -->
-
 <script>
     import { gsap } from "gsap";
-    import TypeIt from "typeit";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
-    const divi = 2;
 
-    // fade-in #promisehead on scroll
     gsap.from("#promisehead", {
-        scrollTrigger: {
-            trigger: "#promisehead",
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-        },
         opacity: 0,
         duration: 1,
         y: 50,
-        onComplete: () => {
-            new TypeIt("#type-it", {
-                lifeLike: false,
-                speed: 0,
-            })
-                .delete(7, { instant: true })
-                .type("✅")
-                .pause(168 / divi)
-                .type(" ")
-                .pause(504 / divi)
-                .type("S")
-                .pause(224 / divi)
-                .type("i")
-                .pause(518 / divi)
-                .type("g")
-                .pause(196 / divi)
-                .type("n")
-                .pause(784 / divi)
-                .type("i")
-                .pause(168 / divi)
-                .type("c")
-                .pause(392 / divi)
-                .delete(1)
-                .pause(98 / divi)
-                .type("f")
-                .pause(112 / divi)
-                .type("i")
-                .pause(126 / divi)
-                .type("c")
-                .pause(112 / divi)
-                .type("a")
-                .pause(252 / divi)
-                .type("n")
-                .pause(1134 / divi)
-                .type("t")
-                .pause(84 / divi)
-                .type(" ")
-                .pause(280 / divi)
-                .type("C")
-                .pause(112 / divi)
-                .type("o")
-                .pause(266 / divi)
-                .type("s")
-                .pause(112 / divi)
-                .type("t")
-                .pause(98 / divi)
-                .type(" ")
-                .pause(252 / divi)
-                .type("S")
-                .pause(98 / divi)
-                .type("a")
-                .pause(168 / divi)
-                .type("v")
-                .pause(112 / divi)
-                .type("i")
-                .pause(196 / divi)
-                .type("n")
-                .pause(70 / divi)
-                .type("g")
-                .pause(940 / divi)
-                .break()
-                .pause(379 / divi)
-                .break()
-                .pause(1400 / divi)
-                .type("✅")
-                .pause(615 / divi)
-                .type(" ")
-                .pause(560 / divi)
-                .type("I")
-                .pause(224 / divi)
-                .type("n")
-                .pause(112 / divi)
-                .type("c")
-                .pause(294 / divi)
-                .type("r")
-                .pause(98 / divi)
-                .type("e")
-                .pause(211 / divi)
-                .type("a")
-                .pause(195 / divi)
-                .type("s")
-                .pause(182 / divi)
-                .type("e")
-                .pause(210 / divi)
-                .type("d")
-                .pause(98 / divi)
-                .type(" ")
-                .pause(182 / divi)
-                .type("E")
-                .pause(196 / divi)
-                .type("f")
-                .pause(182 / divi)
-                .type("f")
-                .pause(140 / divi)
-                .type("i")
-                .pause(603 / divi)
-                .type("c")
-                .pause(182 / divi)
-                .type("i")
-                .pause(140 / divi)
-                .type("e")
-                .pause(224 / divi)
-                .type("n")
-                .pause(140 / divi)
-                .type("c")
-                .pause(280 / divi)
-                .type("i")
-                .pause(98 / divi)
-                .type("e")
-                .pause(98 / divi)
-                .type("s")
-                .pause(338 / divi)
-                .break()
-                .pause(210 / divi)
-                .break()
-                .pause(799 / divi)
-                .type("✅")
-                .pause(419 / divi)
-                .type(" ")
-                .pause(252 / divi)
-                .type("I")
-                .pause(238 / divi)
-                .type("n")
-                .pause(434 / divi)
-                .type("c")
-                .pause(99 / divi)
-                .type("l")
-                .pause(224 / divi)
-                .type("i")
-                .pause(14 / divi)
-                .type("u")
-                .pause(420 / divi)
-                .delete(1)
-                .pause(224 / divi)
-                .delete(1)
-                .pause(378 / divi)
-                .type("u")
-                .pause(196 / divi)
-                .type("s")
-                .pause(112 / divi)
-                .type("i")
-                .pause(182 / divi)
-                .type("v")
-                .pause(126 / divi)
-                .type("e")
-                .pause(127 / divi)
-                .type(" ")
-                .pause(210 / divi)
-                .type("G")
-                .pause(182 / divi)
-                .type("r")
-                .pause(71 / divi)
-                .type("o")
-                .pause(211 / divi)
-                .type("w")
-                .pause(238 / divi)
-                .type("t")
-                .pause(70 / divi)
-                .type("h")
-                .go();
-        },
+    });
+
+    // remove class from pop2 when hovered
+    const out2 = document.getElementById("out2");
+    const pop2 = document.getElementById("pop2");
+    const in2 = document.getElementById("in2");
+    out2.addEventListener("mouseenter", () => {
+        pop2.classList.remove("bg-transparent");
+        in2.classList.add("hidden");
+        pop2.classList.remove("hidden");
+        pop2.classList.add("flex");
+        // animate pop2 to take full height
+        gsap.to("#pop2", {
+            duration: 0.5,
+            opacity: 1,
+            height: "100%",
+            ease: "power2.inOut",
+        });
+    });
+
+    // revert back to transparent when mouse leaves
+    out2.addEventListener("mouseleave", () => {
+        in2.classList.remove("hidden");
+        gsap.to(pop2, {
+            height: "0%",
+            opacity: 0,
+            duration: 0.2,
+            ease: "power4.out",
+            onComplete: () => {
+                pop2.classList.remove("flex");
+                pop2.classList.add("hidden");
+                pop2.classList.add("bg-transparent");
+            },
+        });
+    });
+
+    // repeat above for other two
+    const out0 = document.getElementById("out0");
+    const pop0 = document.getElementById("pop0");
+    const in0 = document.getElementById("in0");
+    out0.addEventListener("mouseenter", () => {
+        pop0.classList.remove("bg-transparent");
+        in0.classList.add("hidden");
+        pop0.classList.remove("hidden");
+        pop0.classList.add("flex");
+        gsap.to("#pop0", {
+            duration: 0.5,
+            opacity: 1,
+            height: "100%",
+            ease: "power2.inOut",
+        });
+    });
+    out0.addEventListener("mouseleave", () => {
+        in0.classList.remove("hidden");
+        gsap.to(pop0, {
+            height: "0%",
+            opacity: 0,
+            duration: 0.2,
+            ease: "power4.out",
+            onComplete: () => {
+                pop0.classList.remove("flex");
+                pop0.classList.add("hidden");
+                pop0.classList.add("bg-transparent");
+            },
+        });
+    });
+
+    const out1 = document.getElementById("out1");
+    const pop1 = document.getElementById("pop1");
+    const in1 = document.getElementById("in1");
+    out1.addEventListener("mouseenter", () => {
+        pop1.classList.remove("bg-transparent");
+        in1.classList.add("hidden");
+        pop1.classList.remove("hidden");
+        pop1.classList.add("flex");
+        gsap.to("#pop1", {
+            duration: 0.5,
+            opacity: 1,
+            height: "100%",
+            ease: "power2.inOut",
+        });
+    });
+    out1.addEventListener("mouseleave", () => {
+        in1.classList.remove("hidden");
+        gsap.to(pop1, {
+            height: "0%",
+            opacity: 0,
+            duration: 0.2,
+            ease: "power4.out",
+            onComplete: () => {
+                pop1.classList.remove("flex");
+                pop1.classList.add("hidden");
+                pop1.classList.add("bg-transparent");
+            },
+        });
     });
 </script>
