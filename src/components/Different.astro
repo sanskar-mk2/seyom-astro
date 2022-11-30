@@ -33,7 +33,7 @@ const items = [
 <section
     class="overflow-x-hidden min-h-screen bg-gradient-to-r flex items-center justify-center from-purple-200 to-blue-200 text-white"
 >
-    <div class="mx-auto px-4 py-16 sm:max-w-xl lg:max-w-full lg:px-8 lg:py-20">
+    <div class="mx-auto px-4 lg:px-8 py-16 sm:max-w-xl lg:max-w-full lg:py-20">
         <div
             class="mb-10 max-w-xl sm:text-center lg:mx-auto lg:mb-12 lg:max-w-2xl"
         >
@@ -198,7 +198,7 @@ const items = [
     // make #diff 1, 2, 3 slide in one after another on scroll
     let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: "#diff",
+            trigger: "#diffhead",
             start: "top 80%",
             end: "bottom 50%",
         },
