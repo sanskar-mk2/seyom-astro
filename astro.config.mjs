@@ -8,7 +8,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://seyom-3.vercel.app',
+    site: 'https://s3.tiwari.cc',
     integrations: [
         tailwind(),
         image({

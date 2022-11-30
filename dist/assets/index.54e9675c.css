@@ -1,0 +1,1 @@
+.grow:where(.astro-ZYW4LG35){transition:all .3s ease-in-out}.grow:where(.astro-ZYW4LG35):hover{transform:scale(1.1)}@keyframes bouncy{0%,to{transform:translateY(-25%) rotate(-45deg);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:rotate(-45deg);animation-timing-function:cubic-bezier(0,0,.2,1)}}#r:where(.astro-SZGKA3G2){animation:bouncy 1s infinite}
