@@ -75,7 +75,7 @@ const items = [
         >
             <div
                 id="diff1"
-                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-purple-100 px-4 py-4 shadow lg:items-start"
+                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-gradient-to-br from-purple-100 to-blue-100 px-4 py-4 shadow lg:items-start"
             >
                 <p class="mt-3 text-purple-600 text-lg font-semibold pb-2">
                     {items[0].title}
@@ -83,28 +83,14 @@ const items = [
                 <ul class="space-y-1 max-w-lg list-inside text-gray-700">
                     {
                         items[0].description.map((item) => (
-                            <li class="flex">
-                                <svg
-                                    class="w-4 mt-1 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
-                                {item}
-                            </li>
+                            <li class="flex">•{item}</li>
                         ))
                     }
                 </ul>
             </div>
             <div
                 id="diff2"
-                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-purple-100 px-4 py-4 shadow lg:items-start"
+                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-gradient-to-b from-purple-100 to-blue-100 px-4 py-4 shadow lg:items-start"
             >
                 <p class="mt-3 text-purple-600 text-lg font-semibold pb-2">
                     {items[1].title}
@@ -112,21 +98,7 @@ const items = [
                 <ul class="space-y-1 max-w-lg list-inside text-gray-700">
                     {
                         items[1].description.map((item) => (
-                            <li class="flex">
-                                <svg
-                                    class="w-4 mt-1 h-4 mr-1.5 text-green-500 dark:text-green-400 flex-shrink-0"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"
-                                    />
-                                </svg>
-                                {item}
-                            </li>
+                            <li class="flex">•{item}</li>
                         ))
                     }
                 </ul>
@@ -134,7 +106,7 @@ const items = [
 
             <div
                 id="diff3"
-                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-purple-100 shadow lg:items-start"
+                class="flex flex-col items-center rounded-lg border-2 border-fuchsia-400 bg-gradient-to-bl from-purple-100 to-blue-100 shadow lg:items-start"
             >
                 <div
                     class="relative flex flex-1 flex-col justify-between p-4 lg:px-4 lg:py-4"

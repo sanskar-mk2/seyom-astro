@@ -1,17 +1,20 @@
 ---
 const stack1 = [
-    "Advanced financial modelling",
+    "Advanced Financial modelling",
     "Performance Dashboards",
     "Process Benchmarking",
     "Feasibility Evaluations",
-    "Project Management template",
+    "Project Management templates",
 ];
 
 const stack2 = [
     "Data Warehousing",
     "Visualization and Automation",
-    "Scalability through app development",
+    "Web Based Apps",
 ];
+
+import { Picture } from "@astrojs/image/components";
+import arrow from "../assets/images/7425.png";
 ---
 
 <div
@@ -34,8 +37,9 @@ const stack2 = [
         <h3 class="text-violet-500 text-2xl font-semibold">Service Suite</h3>
         <div class="lg:w-1/2 py-2">
             <p class="text-base text-gray-900 md:text-lg">
-                Full scale transfomation of the work, workplace and workers to
-                ensure improved process efficiencies and better decision making
+                Full scale digital transfomation of the work, workplace and
+                workers to ensure improved process efficiencies and better
+                decision making
             </p>
         </div>
         <div class="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-2">
@@ -59,7 +63,7 @@ const stack2 = [
                     </svg>
                 </div>
                 <h6 class="mb-2 text-violet-800 font-semibold leading-5">
-                    Analytics and insights
+                    Analytics and Insights
                 </h6>
                 <ul class="mb-4 -ml-1 space-y-2 text-gray-900">
                     {
@@ -110,7 +114,7 @@ const stack2 = [
                     </svg>
                 </div>
                 <h6 class="mb-2 font-semibold leading-5 text-violet-800">
-                    Process Automation and improvements
+                    Process Automation and Improvements
                 </h6>
                 <ul class="mb-4 text-gray-900 -ml-1 space-y-2">
                     {
@@ -172,7 +176,9 @@ const stack2 = [
                     2
                 </div>
                 <div class="flex flex-col">
-                    <h4 class="text-fuchsia-500 text-2xl font-bold">Automate</h4>
+                    <h4 class="text-fuchsia-500 text-2xl font-bold">
+                        Automate
+                    </h4>
                     <div class="text-xl text-gray-900">
                         Insights are used to devise KPIs and then automated to
                         make sure they can be implemented and replicated
@@ -197,13 +203,28 @@ const stack2 = [
                 </div>
             </div>
         </div>
-        <h3 class="text-violet-500 text-2xl mt-8 font-semibold">Sneak Peek</h3>
+        <h3 class="text-violet-500 text-2xl mt-8 font-semibold">Use Cases</h3>
         <p class="text-base text-gray-900 mb-4 md:text-lg">
-            Performed structured data analytics across major verticals for our
-            client and defined clear KPIs for each module. Helped drive
-            performance improvements through root cause analysis of low margin
-            products, structured use of inventory and single source of truth for
-            decision making.
+            <ul class="text-base list-disc text-gray-900 md:text-lg">
+                <li>
+                    Performed structured data analytics across major verticals
+                    for our client and defined clear KPIs for each module.
+                </li>
+                <li>
+                    Helped drive performance improvements through root cause
+                    analysis of low margin products
+                </li>
+                <li>
+                    Enabled structured use of inventory and other manufacturing
+                    data enabling to help with better decision making
+                </li>
+            </ul>
+            <Picture
+                widths={[1600]}
+                aspectRatio={1920 / 1080}
+                src={arrow}
+                alt="arrow"
+            />
         </p>
     </div>
 </div>

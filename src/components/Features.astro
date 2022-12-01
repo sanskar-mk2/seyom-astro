@@ -29,7 +29,9 @@ const items = [
 
 <div class="relative mx-auto px-4 sm:px-6">
     <div class="sm:py-6 lg:py-8 lg:pt-2">
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch my-10">
+        <div
+            class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch my-10"
+        >
             {
                 items.map(({ title, description, icon, href }, index) => (
                     <div
@@ -40,11 +42,21 @@ const items = [
                             <Icon name={icon} class="w-12 h-12" />
 
                             <div class="ml-4 text-xl text-violet-900 font-bold">
-                                <a class="underline" href="{href}">{title}</a>
+                                {title}
                             </div>
                         </div>
                         <p class="text-gray-500 text-md">{description}</p>
                         <div class="grow" />
+                        <div class="max-w-none pt-12 px-6 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+                            <div class="flex w-full sm:w-auto">
+                                <a
+                                    class="btn text-white bg-gray-900 hover:bg-gray-700 w-full"
+                                    href={href}
+                                >
+                                    Learn more
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 ))
             }
