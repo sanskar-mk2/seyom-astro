@@ -15,6 +15,7 @@ const stack2 = [
 
 import { Picture } from "@astrojs/image/components";
 import arrow from "../assets/images/7425.png";
+import AnAT from "../assets/images/anat.png";
 ---
 
 <div
@@ -35,7 +36,7 @@ import arrow from "../assets/images/7425.png";
             </div>
         </div>
         <h3 class="text-violet-500 text-2xl font-semibold">Service Suite</h3>
-        <div class="lg:w-1/2 py-2">
+        <div class="py-2">
             <p class="text-base text-gray-900 md:text-lg">
                 Full scale digital transfomation of the work, workplace and
                 workers to ensure improved process efficiencies and better
@@ -154,8 +155,8 @@ import arrow from "../assets/images/7425.png";
             helping organizations achieve their goals by leveraging the AnAT
             framework.
         </p>
-        <div class="flex flex-col mt-4">
-            <div class="flex gap-4">
+        <div class="flex w-full justify-center mt-4">
+            <!-- <div class="flex gap-4">
                 <div
                     class="md:w-36 h-16 w-16 shrink-0 md:h-36 bg-blue-500 flex justify-center items-center text-2xl md:text-8xl font-bold text-white"
                 >
@@ -201,7 +202,15 @@ import arrow from "../assets/images/7425.png";
                         transformation
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <Picture
+            widths={[600, 1000]}
+            sizes="(max-width: 500px) 1000px, 1000px"
+            class="object-cover"
+            aspectRatio={1711 / 793}
+            src={AnAT}
+            alt="AnAT"
+        />
         </div>
         <h3 class="text-violet-500 text-2xl mt-8 font-semibold">Use Cases</h3>
         <p class="text-base text-gray-900 mb-4 md:text-lg">
