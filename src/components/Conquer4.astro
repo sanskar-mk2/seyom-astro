@@ -1,0 +1,80 @@
+---
+import { Picture } from "@astrojs/image/components";
+import Im4 from "../assets/images/4.png";
+
+---
+
+<div
+    class="py-20 lg:py-12 px-2 flex flex-col justify-center items-center bg-gradient-to-r from-purple-200 to-blue-200 min-h-screen"
+>
+    <div class="grow h-0 sm:h-32"></div>
+
+    <div
+        class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    >
+        <div class="flex flex-col lg:flex-row md:mb-10">
+            <div class="lg:w-1/2">
+                <h2
+                    class="max-w-md font-sans text-3xl font-bold tracking-tight text-violet-900 sm:text-4xl sm:leading-none xl:max-w-lg"
+                >
+                    Knowledge Management Services
+                </h2>
+            </div>
+        </div>
+        <h3 class="text-violet-500 text-2xl font-semibold">Service Suite</h3>
+        <div class="py-2 mb-12">
+            <p class="text-base text-gray-900 md:text-lg">
+                We offer knowledge management and process improvement services
+                in Pharmaceuticals and CROs. Pharmaceuticals is a data
+                powerhouse, and we work with clients to churn the data to draw
+                out business insights and also provide research services and
+                serve as advisors on business problems for our partners.
+            </p>
+        </div>
+        <div class="grid gap-8 row-gap-10 sm:grid-cols-2 lg:grid-cols-3"></div>
+        <h3 class="text-violet-500 text-2xl my-2 font-semibold">
+            Seyom Advantage: Expertise Meets Analytics
+        </h3>
+        <p class="text-base text-gray-900 mb-4 md:text-lg">
+            Our senior leaders come with extensive experience in the
+            pharmaceuticals and CRO space. That combined with analytics holds
+            the power to dynamically transform business processes and achieve
+            desired results.
+        </p>
+        <h3 class="text-violet-500 text-2xl mt-8 font-semibold">Use Cases</h3>
+
+        <section class="text-purple-600 text-md font-semibold">
+            <div
+                class="container px-5 py-12 relative mx-auto justify-center flex flex-wrap"
+            >
+                Engage with us to get experts insights on a wide range of topics
+                including:
+            </div>
+        </section>
+        <div class="w-full flex justify-center">
+            <Picture
+                widths={[600, 1000]}
+                sizes="(min-width: 768px) 600px, 600px"
+                aspectRatio={1192 / 549}
+                src={Im4}
+                alt="knowledge management services"
+            />
+        </div>
+    </div>
+</div>
+
+<style>
+    .arrow-down {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+
+        border-top-width: 20px;
+        border-top-style: solid;
+    }
+
+    .hyphen {
+        hyphens: auto;
+    }
+</style>

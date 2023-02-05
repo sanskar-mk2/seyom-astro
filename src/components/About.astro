@@ -2,7 +2,7 @@
 import { Image, Picture } from "@astrojs/image/components";
 import TeamImg1 from "../assets/images/sukh.jpg";
 import TeamImg2 from "../assets/images/aru.jpg";
-import TeamImg3 from "../assets/images/3.jpg";
+// import TeamImg3 from "../assets/images/3.jpg";
 const team = [
     {
         name: "Sukhmender Vashist",
@@ -26,17 +26,17 @@ const team = [
         description:
             "Aarushi is our dynamic and bubbly business development lead, who comes with over 15 years of experience in consulting and industry. Her “never say never” attitude has helped deliver measurable impact with our client teams as she works hand in hand with teams on the ground to ensure we deliver what was promised, and even more. Aarushi is a post graduate MBA in marketing",
     },
-    {
-        name: "Amit Bafna",
-        title: "Technical Lead, Accounts",
-        avatar: {
-            src: TeamImg3,
-            width: 687,
-            height: 645,
-        },
-        description:
-            "Amit, an accountant by profession has over 14 years of accounting experience for organizations such as Citibank, Publicis, Aegis and GVK India. Well versed with the entire gamut of accounting processes, he is a go getter, who works with our clients to seamlessly run outsourced accounting processes and supports the transition",
-    },
+    // {
+    //     name: "Amit Bafna",
+    //     title: "Technical Lead, Accounts",
+    //     avatar: {
+    //         src: TeamImg3,
+    //         width: 687,
+    //         height: 645,
+    //     },
+    //     description:
+    //         "Amit, an accountant by profession has over 14 years of accounting experience for organizations such as Citibank, Publicis, Aegis and GVK India. Well versed with the entire gamut of accounting processes, he is a go getter, who works with our clients to seamlessly run outsourced accounting processes and supports the transition",
+    // },
 ];
 ---
 
@@ -58,7 +58,7 @@ const team = [
                 <>
                     <div class="group md:flex-row flex-col flex">
                         <div class="w-full items-center flex justify-center">
-                            <div class="w-1/2 md:w-full aspect-square">
+                            <div class="w-1/2 md:w-52 aspect-square">
                                 <Image
                                     src={item.avatar.src}
                                     aspectRatio={
@@ -71,7 +71,7 @@ const team = [
                                 />
                             </div>
                         </div>
-                        <div class="mt-4 max-w-2xl text-center">
+                        <div class="mt-4 grow-0 max-w-2xl text-center">
                             <h2 class="text-xl inline text-slate-800 group-hover:font-bold group-hover:text-violet-700">
                                 {" "}
                                 {item.name}
