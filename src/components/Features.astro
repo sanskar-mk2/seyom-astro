@@ -69,7 +69,7 @@ const items = [
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     gsap.registerPlugin(ScrollTrigger);
     // #spin0, #spin1, #spin2 will be animated in sequence
-    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem, index) => {
+    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem: Element, index) => {
         ScrollTrigger.create({
             trigger: elem,
             start: "top 80%",
@@ -114,7 +114,7 @@ const items = [
         });
     });
     // #spin0, #spin1, #spin2 will parallax on hover if width is greater than 1023px
-    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem, index) => {
+    gsap.utils.toArray("#spin0, #spin1, #spin2").forEach((elem: Element, index) => {
         if (window.innerWidth > 1023) {
             elem.addEventListener("mouseenter", () => {
                 gsap.to(elem, {
